@@ -4,17 +4,15 @@
     style="min-width: 200px;"
 >
     <ul class="nav flex-column">
-    <li class="nav-item">
-        <a class="nav-link text-white sidebar-link" [class.active]="selectedSection === 'section1'" (click)="onClickSidebarButton($event, 'section1')" href="#section1">Section 1</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-white sidebar-link" [class.active]="selectedSection === 'section2'" (click)="onClickSidebarButton($event, 'section2')" href="#section2">Section 2</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-white sidebar-link" [class.active]="selectedSection === 'section3'" (click)="onClickSidebarButton($event, 'section3')" href="#section3">Section 3</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-white sidebar-link" [class.active]="selectedSection === 'section4'" (click)="onClickSidebarButton($event, 'section4')" href="#section4">Section 4</a>
-    </li>
+        <li class="nav-item" *ngFor="let sec of ['section1', 'section2', 'section3', 'section4']">
+            <a
+                class="nav-link text-white sidebar-link"
+                [class.active]="selectedSection === sec"
+                (click)="onClickSidebarButton($event, sec)"
+                [href]="'#' + sec"
+            >
+                {{ sec | titlecase }}
+            </a>
+        </li>
     </ul>
 </nav>

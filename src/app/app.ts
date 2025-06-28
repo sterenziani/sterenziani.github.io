@@ -4,7 +4,6 @@ import { Sidebar } from './sidebar/sidebar';
 import { MainContent } from './main-content/main-content';
 
 declare var bootstrap: any;
-const sectionOrder = ['section1', 'section2', 'section3', 'section4'];
 
 @Component({
   selector: 'app-root',
@@ -17,8 +16,7 @@ export class App implements AfterViewInit {
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
   
   menuOpen = true;
-  selectedSection = sectionOrder[0];
-
+  
   constructor() {
     this.menuOpen = window.innerWidth >= 768;
   }

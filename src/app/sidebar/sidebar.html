@@ -1,18 +1,8 @@
-<nav
-    class="bg-dark text-white p-3 flex-shrink-0 h-100"
-    [class.d-none]="!menuOpen"
-    style="min-width: 200px;"
->
-    <ul class="nav flex-column">
-        <li class="nav-item" *ngFor="let sec of ['section1', 'section2', 'section3', 'section4']">
-            <a
-                class="nav-link text-white sidebar-link"
-                [class.active]="selectedSection === sec"
-                (click)="onClickSidebarButton($event, sec)"
-                [href]="'#' + sec"
-            >
-                {{ sec | titlecase }}
-            </a>
-        </li>
-    </ul>
+<nav id="sidebar" class="sidebar" [class.d-none]="!menuOpen">
+  <nav class="nav nav-pills flex-column">
+    <a class="nav-link" href="#section1">Section 1</a>
+    <a class="nav-link" href="#section2">Section 2</a>
+    <a class="nav-link" href="#section3">Section 3</a>
+    <a class="nav-link" href="#section4">Section 4</a>
+  </nav>
 </nav>

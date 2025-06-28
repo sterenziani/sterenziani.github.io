@@ -1,103 +1,31 @@
-
-/* Hamburger button */
-.hamburger {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  z-index: 1001;
-  font-size: 30px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  display: none; // Shown only on small screens
+.nav {
+    background-color: var(--bs-dark);
+    height: 100vh;
+    padding: 1rem;
+    padding-left: 1.5rem;   
+    min-width: 150px;
+    flex-shrink: 0;
 }
 
-/* Sidebar styles */
-.sidebar {
-  width: 250px;
-  min-height: 100vh;
-  background-color: #2c3e50;
-  color: white;
-  padding-top: 60px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  overflow-y: auto;
-  transition: transform 0.3s ease;
-  z-index: 1000;
+.nav-link {
+    color: var(--bs-white);
+    padding: 0.75rem 1rem;
+    padding-left: 0.25rem;
+    border-left: 4px solid transparent;
+    transition: color 0.3s ease, padding-left 0.3s ease, border-color 0.3s ease;
+    text-decoration: none;
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    li {
-      margin: 20px 0;
-
-      a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-        padding: 10px 20px;
-        display: block;
-
-        &:hover {
-          background-color: #34495e;
-        }
-      }
+    &:hover {
+        color: var(--bs-secondary);
+        border-left-color: var(--bs-secondary);
+        padding-left: 0.5rem;
     }
-  }
-}
 
-/* Sidebar hidden on mobile */
-.sidebar:not(.open) {
-  transform: translateX(-100%);
-}
-
-.sidebar-link {
-  display: block;
-  padding: 0.75rem 1rem;
-  padding-left: 1.25rem;
-  border-left: 4px solid transparent;
-  transition: color 0.3s ease, padding-left 0.3s ease, border-color 0.3s ease;
-  color: #fff;
-  text-decoration: none;
-
-  &:hover {
-    color: #ffc107 !important;
-    padding-left: 1.5rem;
-    border-left-color: #ffc107;
-  }
-
-  &.active {
-    color: #0d6efd !important;
-    font-weight: 600;
-    padding-left: 1.5rem;
-    border-left-color: #0d6efd;
-  }
-}
-
-
-.sidebar-link:not(.active):hover::before {
-  background-color: #ffc107;
-}
-
-/* Responsive layout */
-@media (max-width: 767px) {
-  .hamburger {
-    display: block;
-  }
-
-  .sidebar {
-    transform: translateX(-100%);
-  }
-
-  .sidebar.open {
-    transform: translateX(0);
-  }
-
-  .content {
-    margin-left: 0;
-  }
+    &.active {
+        color: var(--bs-primary);
+        border-left-color: var(--bs-primary);
+        background-color: transparent;
+        font-weight: 600;
+        padding-left: 0.5rem;
+    }
 }

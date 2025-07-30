@@ -1,0 +1,49 @@
+<div class="card mb-3">
+    <div class="row g-0">
+        <!-- Image -->
+        <div class="col-md-4 cursor-pointer">
+            <img
+                [src]="'images/'+project.image"
+                class="card-img-custom"
+                alt="..."
+                data-bs-toggle="modal"
+                [attr.data-bs-target]="'#modal-'+project.image"
+            />
+        </div>
+
+        <!-- Information -->
+        <div class="col-md-8">
+            <div class="card-body">
+                <!-- Tags -->
+                <div class="d-flex flex-wrap mb-1 gap-2">
+                    <span *ngFor="let tag of project.tags" class="badge text-bg-secondary">
+                        {{ tag }}
+                    </span>
+                </div>
+
+                <!-- Text -->
+                <div class="mb-3">
+                    <h5 class="card-title mb-0">{{ project.title }}</h5>
+                    <p class="card-text mb-2"><small class="text-body-secondary">{{ project.summary }}</small></p>
+                    <div *ngFor="let paragraph of descriptionParagraphs()" class="card-text preserve-linebreaks">
+                        {{ paragraph }}
+                    </div>
+                </div>
+                
+                <!-- Links -->
+                <div class="d-flex gap-2 justify-content-around justify-content-md-start">
+                    <link-button *ngFor="let link of linkEntries()" [type]="link.type" [url]="link.url"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Image modal -->
+<div class="modal fade" [id]="'modal-' + project.image" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <img [src]="'images/'+project.image" class="img-fluid" />
+    </div>
+  </div>
+</div>

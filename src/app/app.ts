@@ -1,7 +1,8 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Sidebar } from './sidebar/sidebar';
-import { MainContent } from './main-content/main-content';
+import { Sidebar } from './components/sidebar/sidebar';
+import { MainContent } from './components/main-content/main-content';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 declare var bootstrap: any;
 
@@ -10,7 +11,7 @@ declare var bootstrap: any;
   templateUrl: './app.html',
   styleUrls: ['./app.scss'],
   standalone: true,
-  imports: [CommonModule, Sidebar, MainContent],
+  imports: [CommonModule, FontAwesomeModule, Sidebar, MainContent],
 })
 export class App implements AfterViewInit {
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;

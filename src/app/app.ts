@@ -30,9 +30,8 @@ export class App implements AfterViewInit {
   }
 
   onSidebarItemClicked() {
-    console.log(window.innerWidth)
     if (window.innerWidth < 768)
-      this.menuOpen = false;
+      setTimeout(() => this.menuOpen = false, 100);
   }
 
   @HostListener('window:resize')

@@ -1,10 +1,15 @@
 .nav {
-    background-color: var(--bs-dark);
-    height: 100vh;
-    padding: 1rem;
-    padding-left: 1.5rem;   
-    min-width: 150px;
-    flex-shrink: 0;
+  background-color: var(--bs-dark);
+  height: 100vh;
+  padding: 1rem 1rem 1rem 1.5rem;
+  min-width: 150px;
+  flex-shrink: 0;
+
+  // Full width on small screens
+  @media (max-width: 767.98px) {
+    width: 100vw;
+    min-width: 100%;
+  }
 }
 
 .nav-link {
@@ -22,10 +27,15 @@
     }
 
     &.active {
-        color: var(--bs-primary);
-        border-left-color: var(--bs-primary);
+        color: var(--bs-success);
+        border-left-color: var(--bs-success);
         background-color: transparent;
         font-weight: 600;
         padding-left: 0.5rem;
     }
+}
+
+.sidebar-image {
+  width: 5rem;
+  height: 5rem;
 }

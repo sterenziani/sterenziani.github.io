@@ -11,15 +11,15 @@
     </button>
   </nav>
 
-  <div class="d-flex flex-grow-1 overflow-hidden">
-    <app-sidebar [menuOpen]="menuOpen"/>
+  <div class="d-flex flex-md-row flex-column flex-grow-1 overflow-hidden">
+    <app-sidebar [menuOpen]="menuOpen" (sidebarItemClicked)="onSidebarItemClicked()" />
     <main #scrollContainer
-      class="flex-grow-1 overflow-auto p-4 bg-light"
+      class="flex-grow-1 overflow-auto p-4 bg-tertiary"
       data-bs-spy="scroll"
       data-bs-target="#sidebar"
       tabindex="0"
     >
-      <h1 class="text-center text-primary">Portfolio | Santiago Terenziani</h1>
+      <h1 class="text-center text-success">Portfolio | Santiago Terenziani</h1>
       <app-main-content/>
     </main>
   </div>

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Sidebar } from './components/sidebar/sidebar';
 import { MainContent } from './components/main-content/main-content';
@@ -27,6 +27,12 @@ export class App implements AfterViewInit {
     if (scrollElement) {
       bootstrap.ScrollSpy.getOrCreateInstance(scrollElement, {target: '#sidebar', offset: 0});
     }
+  }
+
+  onSidebarItemClicked() {
+    console.log(window.innerWidth)
+    if (window.innerWidth < 768)
+      this.menuOpen = false;
   }
 
   @HostListener('window:resize')

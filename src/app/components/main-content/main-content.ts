@@ -25,7 +25,7 @@ export class MainContent {
       image: "autoScheduler.png",
       links: {
         source: "https://github.com/sterenziani/autoscheduler",
-        demo: "https://www.youtube.com/watch?v=fnlZASF83Mw"
+        video: "https://www.youtube.com/watch?v=fnlZASF83Mw"
       }
     },
     {

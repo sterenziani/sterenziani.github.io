@@ -10,4 +10,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class Sidebar {
   @Input() menuOpen = true;
+  @Output() sidebarItemClicked = new EventEmitter<void>();
+
+  onNavClick() {
+    this.sidebarItemClicked.emit();
+  }
 }

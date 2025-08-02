@@ -1,0 +1,26 @@
+<div class="container-fluid vh-100 d-flex flex-column">
+  <!-- Top navbar with hamburger -->
+  <nav class="navbar navbar-dark bg-dark d-md-none">
+    <button
+      class="btn btn-outline-light mx-3"
+      type="button"
+      aria-label="Toggle menu"
+      (click)="toggleMenu()"
+    >
+      ☰
+    </button>
+  </nav>
+
+  <div class="d-flex flex-md-row flex-column flex-grow-1 overflow-hidden">
+    <app-sidebar [menuOpen]="menuOpen" (sidebarItemClicked)="onSidebarItemClicked()" />
+    <main #scrollContainer
+      class="flex-grow-1 overflow-auto p-4 bg-tertiary"
+      data-bs-spy="scroll"
+      data-bs-target="#sidebar"
+      tabindex="0"
+    >
+      <h1 class="text-center text-success">Portfolio | Santiago Terenziani</h1>
+      <app-main-content/>
+    </main>
+  </div>
+</div>

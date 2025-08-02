@@ -1,0 +1,15 @@
+<section id="webapps" class="mb-5">
+    <list-section symbol="globe" title="Web Applications" description="Full-stack web apps with dynamic UIs, REST APIs, and database integration.">
+        <project-card *ngFor="let app of webapps" [project]="app"/>
+    </list-section>
+</section>
+<section id="games" class="mb-5">
+    <list-section symbol="gamepad" title="Games" description="Interactive prototypes experimenting with game design and mechanics.">
+        <project-card *ngFor="let game of games" [project]="game"/>
+    </list-section>
+</section>
+<section id="tools" class="mb-5">
+    <list-section symbol="toolbox" title="Tools" description="Research projects exploring algorithms and system models, built for university work.">
+        <project-card *ngFor="let tool of tools" [project]="tool"/>
+    </list-section>
+</section>

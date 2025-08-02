@@ -1,0 +1,14 @@
+.curtain-card {
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.curtain {
+  transition: transform 0.5s ease-in-out;
+  transform: translateY(0%);
+  z-index: 2;
+}
+
+.curtain-card:hover .curtain {
+  transform: translateY(-100%);
+}

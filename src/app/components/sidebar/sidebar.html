@@ -1,0 +1,10 @@
+<nav id="sidebar" class="sidebar" [class.d-none]="!menuOpen">
+  <nav class="nav nav-pills flex-column">
+  <img class="sidebar-image mx-auto" src="images/st.png"/>
+    <a *ngFor="let item of sidebarLinks"
+      class="nav-link"
+      [href]="'#'+item.hrefTag"
+      (click)="onNavClick()">{{ item.label }}
+    </a>
+  </nav>
+</nav>

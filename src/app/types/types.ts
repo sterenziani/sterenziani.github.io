@@ -14,3 +14,8 @@ export type ProjectLinks = {
     video?: string;
     demo?: string;
 }
+
+export type SidebarLink = {
+    label: string;
+    hrefTag: string;
+}

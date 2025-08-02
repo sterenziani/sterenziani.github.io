@@ -38,4 +38,9 @@
 .sidebar-image {
   width: 5rem;
   height: 5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 2px rgba(80, 243, 142, 0.4), 
+              0 0 4px rgba(80, 243, 142, 0.3),
+              0 0 1rem rgba(80, 243, 142, 0.3),
+              0 0 4rem rgba(80, 243, 142, 0.1);
 }
